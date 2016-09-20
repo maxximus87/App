@@ -6,27 +6,28 @@ end
 
 post '/name' do
 	name = params[:user_name]
-	redirect '/age?users_name=' + name
+	redirect '/age?user_name=' + name
 end
 
 get '/age' do
-	name = params[:users_name].capitalize
+	name = params[:user_name].capitalize
 	erb :get_age, :locals => {:name => name}
 end
 
 post '/age' do
 	age = params[:user_age]
     name = params[:user_name]
-	    redirect '/3_fav_numbers?name=' + name + '&age=' + age
+    redirect '/3_fav_numbers?user_name=' + name + '&age=' + age
 end
 
- get '/3_fav_numbers' do
+get '/3_fav_numbers' do
  	name = params[:user_name]
- 	age = params[:user_age]
-	erb :get_favorite, :locals => {:name => name, :age => age,}
+ 	name
+  	age = params[:user_age]
+	 erb :get_favorite, :locals => {:name => name, :age => age,}
  end
 
- post '/numbers' do
+post '/numbers' do
  	age = params[:age]
 	name = params[:name]
 	fav1 = params[:user_number_1]
