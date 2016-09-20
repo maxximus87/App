@@ -1,10 +1,10 @@
-Alright <%= name %>, what are your three favorite numbers?
+Alright <%= name %>, what are your three favorite single-digit numbers?
 
 <form method = "post" action = "/numbers">
 	<input type = "hidden" name = "user_name" value = <%= name %> >
-	<input type = "number" name = "user_number_1">
-	<input type = "number" name = "user_number_2">
-	<input type = "number" name = "user_number_3">
+	<input type = "number" min = "1" max = "9" name = "user_number_1">
+	<input type = "number" min = "1" max = "9" name = "user_number_2">
+	<input type = "number" min = "1" max = "9" name = "user_number_3">
 	<input type = "submit">
 	
 </form>
